@@ -36,6 +36,7 @@ func (ls *linked_list[T]) deleteFront() {
 	if ls.head != nil {
 		ls.head = ls.head.next
 	}
+	ls.size--
 }
 
 // O(n)
@@ -47,9 +48,13 @@ func (ls *linked_list[T]) deleteBack() {
 		}
 		tempNode.next = nil
 	}
+	ls.size--
 
 }
 
+func (ls *linked_list[T]) getSize() int {
+	return ls.size
+}
 
 func (ls *linked_list[T]) printList() {
 	current := ls.head

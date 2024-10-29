@@ -18,11 +18,13 @@ func (s *stack[T]) push(newVal T) {
 	s.size++
 }
 
-func (s *stack[T]) pop() {
+func (s *stack[T]) pop() *Node[T] {
+	temp := s.head
 	if s.head != nil {
 		s.head = s.head.next
 		s.size--
 	}
+	return temp
 }
 
 
